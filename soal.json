@@ -1,0 +1,747 @@
+{
+  "judul": "Latihan Sistem Operasi (Rocky Linux)",
+  "soal": [
+    {
+      "id": 1,
+      "materi": "Bagian I: Dasar Sistem Operasi",
+      "pertanyaan": "Apa fungsi utama sistem operasi?",
+      "opsi": [
+        "Menerjemahkan kode program menjadi bahasa mesin saja",
+        "Menyimpan seluruh data pengguna secara permanen",
+        "Menghubungkan komputer ke internet saja",
+        "Mengelola sumber daya perangkat keras dan menjadi perantara antara pengguna atau aplikasi dengan perangkat keras",
+        "Mengganti fungsi BIOS saat komputer dinyalakan"
+      ],
+      "jawaban": "d",
+      "penjelasan": "Sistem operasi mengatur CPU, memori, penyimpanan, dan perangkat lain, serta menyediakan antarmuka bagi pengguna dan aplikasi."
+    },
+    {
+      "id": 2,
+      "materi": "Bagian I: Dasar Sistem Operasi",
+      "pertanyaan": "Bagian inti sistem operasi yang berinteraksi langsung dengan perangkat keras serta mengelola proses, memori, dan perangkat disebut...",
+      "opsi": [
+        "Shell",
+        "Kernel",
+        "Bootloader",
+        "Terminal emulator",
+        "Package manager"
+      ],
+      "jawaban": "b",
+      "penjelasan": "Kernel adalah inti OS. Shell hanyalah antarmuka perintah yang meneruskan permintaan pengguna ke kernel."
+    },
+    {
+      "id": 3,
+      "materi": "Bagian I: Dasar Sistem Operasi",
+      "pertanyaan": "Program yang menerima perintah teks dari pengguna lalu meneruskannya ke kernel, misalnya `bash`, disebut...",
+      "opsi": [
+        "Kernel",
+        "Driver",
+        "Daemon",
+        "Compiler",
+        "Shell"
+      ],
+      "jawaban": "e",
+      "penjelasan": "Shell adalah interpreter perintah. Bash adalah shell bawaan pada Rocky Linux."
+    },
+    {
+      "id": 4,
+      "materi": "Bagian I: Dasar Sistem Operasi",
+      "pertanyaan": "Rocky Linux adalah distribusi Linux yang...",
+      "opsi": [
+        "Berbasis Debian dan memakai `apt` sebagai package manager",
+        "Dibuat oleh Microsoft khusus untuk server Windows",
+        "Dibuat sebagai pengganti CentOS Linux dan kompatibel dengan Red Hat Enterprise Linux (RHEL)",
+        "Merupakan varian Ubuntu untuk perangkat mobile",
+        "Berbasis BSD dan memakai kernel FreeBSD"
+      ],
+      "jawaban": "c",
+      "penjelasan": "Rocky Linux berbasis keluarga RHEL, sehingga memakai `dnf` dan paket `.rpm`."
+    },
+    {
+      "id": 5,
+      "materi": "Bagian I: Dasar Sistem Operasi",
+      "pertanyaan": "Program yang sedang dieksekusi dan berada di dalam memori disebut...",
+      "opsi": [
+        "Proses",
+        "File",
+        "Direktori",
+        "Repositori",
+        "Paket"
+      ],
+      "jawaban": "a",
+      "penjelasan": "Program adalah file di disk. Ketika dijalankan dan dimuat ke memori, ia menjadi proses dengan PID sendiri."
+    },
+    {
+      "id": 6,
+      "materi": "Bagian I: Dasar Sistem Operasi",
+      "pertanyaan": "Perintah untuk menampilkan versi kernel yang sedang berjalan adalah...",
+      "opsi": [
+        "`ls -v`",
+        "`cat /etc/passwd`",
+        "`df -h`",
+        "`uname -r`",
+        "`whoami`"
+      ],
+      "jawaban": "d",
+      "penjelasan": "`uname -r` menampilkan rilis kernel. `whoami` hanya menampilkan nama user yang sedang aktif."
+    },
+    {
+      "id": 7,
+      "materi": "Bagian I: Dasar Sistem Operasi",
+      "pertanyaan": "Perintah untuk melihat nama dan versi distribusi Linux yang terpasang adalah...",
+      "opsi": [
+        "`cat /etc/passwd`",
+        "`cat /etc/os-release`",
+        "`hostname`",
+        "`uptime`",
+        "`ps aux`"
+      ],
+      "jawaban": "b",
+      "penjelasan": "File `/etc/os-release` berisi nama dan versi distribusi, misalnya Rocky Linux 9."
+    },
+    {
+      "id": 8,
+      "materi": "Bagian II: Navigasi dan File",
+      "pertanyaan": "Perintah untuk menampilkan direktori kerja saat ini adalah...",
+      "opsi": [
+        "`cd`",
+        "`ls`",
+        "`whoami`",
+        "`path`",
+        "`pwd`"
+      ],
+      "jawaban": "e",
+      "penjelasan": "`pwd` adalah singkatan dari print working directory."
+    },
+    {
+      "id": 9,
+      "materi": "Bagian II: Navigasi dan File",
+      "pertanyaan": "Apa fungsi opsi `-p` pada perintah `mkdir -p proyek/tugas/2026`?",
+      "opsi": [
+        "Memberi password pada direktori baru",
+        "Membuat direktori dengan permission 755",
+        "Membuat direktori induk yang belum ada sekaligus, dan tidak error jika direktorinya sudah ada",
+        "Membuat direktori yang hanya bisa dibaca",
+        "Menampilkan proses yang memakai direktori itu"
+      ],
+      "jawaban": "c",
+      "penjelasan": "Tanpa `-p`, `mkdir` gagal bila direktori induknya belum ada."
+    },
+    {
+      "id": 10,
+      "materi": "Bagian II: Navigasi dan File",
+      "pertanyaan": "Manakah yang merupakan path absolut?",
+      "opsi": [
+        "`/home/mahasiswa/tugas.txt`",
+        "`tugas.txt`",
+        "`./tugas.txt`",
+        "`../tugas.txt`",
+        "`home/mahasiswa/tugas.txt`"
+      ],
+      "jawaban": "a",
+      "penjelasan": "Path absolut selalu diawali `/` (root). Path lainnya relatif terhadap direktori kerja."
+    },
+    {
+      "id": 11,
+      "materi": "Bagian II: Navigasi dan File",
+      "pertanyaan": "Direktori tempat file konfigurasi sistem umumnya disimpan adalah...",
+      "opsi": [
+        "`/home`",
+        "`/tmp`",
+        "`/var/log`",
+        "`/etc`",
+        "`/boot`"
+      ],
+      "jawaban": "d",
+      "penjelasan": "Contohnya `/etc/passwd`, `/etc/ssh/sshd_config`, dan `/etc/sysconfig/atop`."
+    },
+    {
+      "id": 12,
+      "materi": "Bagian II: Navigasi dan File",
+      "pertanyaan": "File log sistem dan layanan (termasuk log `atop`) umumnya tersimpan di direktori...",
+      "opsi": [
+        "`/etc/log`",
+        "`/var/log`",
+        "`/usr/log`",
+        "`/home/log`",
+        "`/tmp`"
+      ],
+      "jawaban": "b",
+      "penjelasan": "Log `atop` ada di `/var/log/atop/`."
+    },
+    {
+      "id": 13,
+      "materi": "Bagian II: Navigasi dan File",
+      "pertanyaan": "Perintah untuk memindahkan file atau mengganti namanya adalah...",
+      "opsi": [
+        "`cp`",
+        "`rm`",
+        "`ln`",
+        "`touch`",
+        "`mv`"
+      ],
+      "jawaban": "e",
+      "penjelasan": "`mv lama.txt baru.txt` mengganti nama, `mv file.txt /tmp/` memindahkan. `cp` hanya menyalin."
+    },
+    {
+      "id": 14,
+      "materi": "Bagian II: Navigasi dan File",
+      "pertanyaan": "Mengapa perintah `rm -rf` harus digunakan dengan sangat hati-hati?",
+      "opsi": [
+        "Karena memformat seluruh harddisk",
+        "Karena hanya bisa dijalankan oleh root",
+        "Karena menghapus direktori beserta seluruh isinya tanpa konfirmasi dan tanpa tempat sampah, sehingga tidak bisa dibatalkan",
+        "Karena memindahkan file ke Trash",
+        "Karena mengubah permission semua file menjadi 777"
+      ],
+      "jawaban": "c",
+      "penjelasan": "`-r` berarti rekursif, `-f` berarti paksa. Salah ketik path bisa menghapus data penting."
+    },
+    {
+      "id": 15,
+      "materi": "Bagian II: Navigasi dan File",
+      "pertanyaan": "Apa fungsi `>>` pada perintah `echo \"halo\" >> catatan.txt`?",
+      "opsi": [
+        "Menambahkan keluaran ke akhir file tanpa menghapus isi lama",
+        "Menimpa seluruh isi `catatan.txt`",
+        "Menyalurkan keluaran ke perintah lain",
+        "Membaca isi `catatan.txt`",
+        "Menghapus baris terakhir `catatan.txt`"
+      ],
+      "jawaban": "a",
+      "penjelasan": "`>` menimpa isi file, sedangkan `>>` menambahkan di akhir."
+    },
+    {
+      "id": 16,
+      "materi": "Bagian II: Navigasi dan File",
+      "pertanyaan": "Apa fungsi tanda `|` (pipe) pada perintah `ls -l | grep txt`?",
+      "opsi": [
+        "Menyimpan keluaran `ls -l` ke file bernama `grep`",
+        "Menjalankan kedua perintah di terminal berbeda",
+        "Menghapus hasil `ls -l` yang mengandung txt",
+        "Menyalurkan keluaran perintah di kiri menjadi masukan perintah di kanan",
+        "Mengganti nama file yang berakhiran txt"
+      ],
+      "jawaban": "d",
+      "penjelasan": "Di sini `grep txt` menyaring keluaran `ls -l` sehingga hanya baris yang memuat kata txt yang tampil."
+    },
+    {
+      "id": 17,
+      "materi": "Bagian III: Proses dan Pemantauan Sistem",
+      "pertanyaan": "Di dalam `top`, tombol untuk mengurutkan proses berdasarkan penggunaan RAM adalah...",
+      "opsi": [
+        "`P`",
+        "`M`",
+        "`k`",
+        "`q`",
+        "`h`"
+      ],
+      "jawaban": "b",
+      "penjelasan": "`M` mengurutkan berdasarkan memori, `P` berdasarkan CPU, `k` untuk mematikan proses, dan `q` untuk keluar."
+    },
+    {
+      "id": 18,
+      "materi": "Bagian III: Proses dan Pemantauan Sistem",
+      "pertanyaan": "Perintah untuk memantau hanya proses dengan PID 1234 menggunakan `top` adalah...",
+      "opsi": [
+        "`top -u 1234`",
+        "`top -n 1234`",
+        "`top 1234`",
+        "`pgrep top 1234`",
+        "`top -p 1234`"
+      ],
+      "jawaban": "e",
+      "penjelasan": "`-p` memfilter berdasarkan PID, sedangkan `-u` memfilter berdasarkan nama user."
+    },
+    {
+      "id": 19,
+      "materi": "Bagian III: Proses dan Pemantauan Sistem",
+      "pertanyaan": "Perintah untuk menambahkan repositori EPEL di Rocky Linux sebelum memasang `htop` dan `atop` adalah...",
+      "opsi": [
+        "`sudo dnf install htop -y` (tanpa EPEL)",
+        "`sudo dnf update epel`",
+        "`sudo dnf install epel-release -y`",
+        "`sudo systemctl enable epel`",
+        "`sudo dnf remove epel-release -y`"
+      ],
+      "jawaban": "c",
+      "penjelasan": "`htop` dan `atop` tidak ada di repositori standar. Pasang `epel-release` dulu, baru `sudo dnf install htop atop -y`."
+    },
+    {
+      "id": 20,
+      "materi": "Bagian III: Proses dan Pemantauan Sistem",
+      "pertanyaan": "Di `htop`, tombol pintas untuk menyaring (filter) proses berdasarkan nama tertentu adalah...",
+      "opsi": [
+        "`F4`",
+        "`F3`",
+        "`F5`",
+        "`F9`",
+        "`F10`"
+      ],
+      "jawaban": "a",
+      "penjelasan": "`F4` adalah Filter. `F3` adalah Search (menyorot hasil), `F5` Tree view, `F9` Kill, `F10` Quit."
+    },
+    {
+      "id": 21,
+      "materi": "Bagian III: Proses dan Pemantauan Sistem",
+      "pertanyaan": "Di `htop`, tombol pintas untuk mengubah tampilan proses menjadi pohon (tree view) adalah...",
+      "opsi": [
+        "`F2`",
+        "`F3`",
+        "`F4`",
+        "`F5`",
+        "`F10`"
+      ],
+      "jawaban": "d",
+      "penjelasan": "Tree view menampilkan hubungan induk dan anak proses, mirip `pstree`."
+    },
+    {
+      "id": 22,
+      "materi": "Bagian III: Proses dan Pemantauan Sistem",
+      "pertanyaan": "Perintah untuk melihat hirarki induk dan anak proses beserta PID-nya adalah...",
+      "opsi": [
+        "`pgrep -l`",
+        "`pstree -p`",
+        "`top -p`",
+        "`ps -p`",
+        "`pstree -u`"
+      ],
+      "jawaban": "b",
+      "penjelasan": "`pstree -p` menampilkan PID. Opsi `-u` hanya menandai perpindahan user."
+    },
+    {
+      "id": 23,
+      "materi": "Bagian III: Proses dan Pemantauan Sistem",
+      "pertanyaan": "Perintah untuk mencari PID proses bernama `sshd` sekaligus menampilkan namanya adalah...",
+      "opsi": [
+        "`pstree -l sshd`",
+        "`htop -l sshd`",
+        "`atop -p sshd`",
+        "`top -l sshd`",
+        "`pgrep -l sshd`"
+      ],
+      "jawaban": "e",
+      "penjelasan": "`pgrep` mencari proses berdasarkan nama, dan `-l` menampilkan nama proses di samping PID."
+    },
+    {
+      "id": 24,
+      "materi": "Bagian III: Proses dan Pemantauan Sistem",
+      "pertanyaan": "Perintah untuk membaca riwayat log `atop` yang tersimpan adalah...",
+      "opsi": [
+        "`atop -l`",
+        "`atop -h`",
+        "`atop -r`",
+        "`top -r`",
+        "`htop -r`"
+      ],
+      "jawaban": "c",
+      "penjelasan": "Log `atop` tersimpan di `/var/log/atop/`. `atop -r` membacanya kembali, dan Anda bisa berpindah waktu dengan tombol `t` dan `T`."
+    },
+    {
+      "id": 25,
+      "materi": "Bagian III: Proses dan Pemantauan Sistem",
+      "pertanyaan": "Di file manakah interval pencatatan log `atop` diubah (variabel `LOGINTERVAL`)?",
+      "opsi": [
+        "`/etc/sysconfig/atop`",
+        "`/var/log/atop/atop.conf`",
+        "`/etc/atop.d/interval`",
+        "`/usr/bin/atop`",
+        "`/home/atop/config`"
+      ],
+      "jawaban": "a",
+      "penjelasan": "Setelah mengubah `LOGINTERVAL`, restart layanan `atop` agar berlaku."
+    },
+    {
+      "id": 26,
+      "materi": "Bagian III: Proses dan Pemantauan Sistem",
+      "pertanyaan": "Apa efek perintah `sudo systemctl enable --now atop`?",
+      "opsi": [
+        "Hanya menjalankan layanan sekali tanpa auto-start saat boot",
+        "Memasang paket `atop` dari repositori",
+        "Menghapus layanan `atop` dari sistem",
+        "Layanan otomatis berjalan setiap boot dan langsung dijalankan sekarang",
+        "Mengubah interval log `atop` menjadi 60 detik"
+      ],
+      "jawaban": "d",
+      "penjelasan": "`enable` mengatur auto-start, sedangkan `--now` menjalankannya seketika."
+    },
+    {
+      "id": 27,
+      "materi": "Bagian III: Proses dan Pemantauan Sistem",
+      "pertanyaan": "Perintah `kill -9 PID` mengirimkan sinyal apa ke proses tersebut?",
+      "opsi": [
+        "SIGTERM, yang meminta proses berhenti dengan sopan",
+        "SIGKILL, yang menghentikan proses secara paksa",
+        "SIGHUP, yang memuat ulang konfigurasi",
+        "SIGSTOP, yang menjeda proses",
+        "SIGINT, seperti menekan Ctrl+C"
+      ],
+      "jawaban": "b",
+      "penjelasan": "Sinyal bawaan `kill` adalah SIGTERM (15). SIGKILL (9) dipakai bila proses tidak mau berhenti."
+    },
+    {
+      "id": 28,
+      "materi": "Bagian IV: Manajemen User dan Grup",
+      "pertanyaan": "Perintah untuk membuat akun user baru bernama `budi` adalah...",
+      "opsi": [
+        "`sudo usermod budi`",
+        "`sudo passwd budi`",
+        "`sudo userdel budi`",
+        "`sudo chage budi`",
+        "`sudo useradd budi`"
+      ],
+      "jawaban": "e",
+      "penjelasan": "Setelah `useradd`, user belum bisa login sebelum diberi password dengan `sudo passwd budi`."
+    },
+    {
+      "id": 29,
+      "materi": "Bagian IV: Manajemen User dan Grup",
+      "pertanyaan": "Perintah untuk memeriksa status password akun `mahasiswa` (terkunci atau tidak) adalah...",
+      "opsi": [
+        "`sudo chage mahasiswa`",
+        "`id mahasiswa`",
+        "`sudo passwd -S mahasiswa`",
+        "`sudo usermod -S mahasiswa`",
+        "`groups mahasiswa`"
+      ],
+      "jawaban": "c",
+      "penjelasan": "Keluarannya berawalan `LK` bila terkunci dan `PS` bila password aktif."
+    },
+    {
+      "id": 30,
+      "materi": "Bagian IV: Manajemen User dan Grup",
+      "pertanyaan": "Perintah untuk mengunci akun user `mahasiswa` adalah...",
+      "opsi": [
+        "`sudo usermod -L mahasiswa`",
+        "`sudo usermod -U mahasiswa`",
+        "`sudo userdel mahasiswa`",
+        "`sudo useradd -L mahasiswa`",
+        "`sudo killall -u mahasiswa`"
+      ],
+      "jawaban": "a",
+      "penjelasan": "`-L` untuk Lock, `-U` untuk Unlock."
+    },
+    {
+      "id": 31,
+      "materi": "Bagian IV: Manajemen User dan Grup",
+      "pertanyaan": "Perintah untuk menghapus akun `mahasiswa` beserta direktori home-nya adalah...",
+      "opsi": [
+        "`sudo userdel mahasiswa`",
+        "`sudo usermod -r mahasiswa`",
+        "`sudo rm mahasiswa`",
+        "`sudo userdel -r mahasiswa`",
+        "`sudo killall -u mahasiswa`"
+      ],
+      "jawaban": "d",
+      "penjelasan": "Tanpa `-r`, akun terhapus tetapi folder `/home/mahasiswa` masih tertinggal."
+    },
+    {
+      "id": 32,
+      "materi": "Bagian IV: Manajemen User dan Grup",
+      "pertanyaan": "User `mahasiswa` masih punya proses berjalan. Perintah untuk menghentikan seluruh prosesnya sebelum akunnya dihapus adalah...",
+      "opsi": [
+        "`pgrep -u mahasiswa`",
+        "`sudo killall -u mahasiswa`",
+        "`top -u mahasiswa`",
+        "`sudo passwd -l mahasiswa`",
+        "`id mahasiswa`"
+      ],
+      "jawaban": "b",
+      "penjelasan": "`pgrep -u` hanya mencari proses, tidak menghentikannya. `userdel` akan menolak menghapus user yang masih punya proses aktif."
+    },
+    {
+      "id": 33,
+      "materi": "Bagian IV: Manajemen User dan Grup",
+      "pertanyaan": "Perintah agar akun `mahasiswa` kedaluwarsa pada 31 Desember 2026 adalah...",
+      "opsi": [
+        "`sudo chage -l mahasiswa`",
+        "`sudo chage -M 2026-12-31 mahasiswa`",
+        "`sudo usermod -U 2026-12-31 mahasiswa`",
+        "`sudo passwd -S 2026-12-31 mahasiswa`",
+        "`sudo chage -E 2026-12-31 mahasiswa`"
+      ],
+      "jawaban": "e",
+      "penjelasan": "Format tanggalnya YYYY-MM-DD. Cek dengan `sudo chage -l mahasiswa`."
+    },
+    {
+      "id": 34,
+      "materi": "Bagian IV: Manajemen User dan Grup",
+      "pertanyaan": "Perintah untuk melihat UID, GID, dan daftar grup milik user `mahasiswa` adalah...",
+      "opsi": [
+        "`pwd mahasiswa`",
+        "`whoami mahasiswa`",
+        "`id mahasiswa`",
+        "`sudo passwd -S mahasiswa`",
+        "`sudo chage -l mahasiswa`"
+      ],
+      "jawaban": "c",
+      "penjelasan": "`groups mahasiswa` juga menampilkan daftar grup."
+    },
+    {
+      "id": 35,
+      "materi": "Bagian IV: Manajemen User dan Grup",
+      "pertanyaan": "Di Rocky Linux, user dapat memakai `sudo` setelah ditambahkan ke grup...",
+      "opsi": [
+        "`wheel`",
+        "`sudo`",
+        "`admin`",
+        "`root`",
+        "`staff`"
+      ],
+      "jawaban": "a",
+      "penjelasan": "Perintahnya `sudo usermod -aG wheel budi`. Grup `sudo` dipakai di Ubuntu/Debian, bukan di keluarga RHEL."
+    },
+    {
+      "id": 36,
+      "materi": "Bagian IV: Manajemen User dan Grup",
+      "pertanyaan": "File yang menyimpan daftar akun user (nama, UID, direktori home, dan shell) adalah...",
+      "opsi": [
+        "`/etc/group`",
+        "`/etc/hosts`",
+        "`/var/log/users`",
+        "`/etc/passwd`",
+        "`/home/users`"
+      ],
+      "jawaban": "d",
+      "penjelasan": "`/etc/group` menyimpan daftar grup. Hash password disimpan di `/etc/shadow`."
+    },
+    {
+      "id": 37,
+      "materi": "Bagian V: SSH, Firewall, dan Layanan",
+      "pertanyaan": "Manakah urutan yang benar untuk mengaktifkan SSH dan membuka aksesnya melalui firewall?",
+      "opsi": [
+        "`sudo dnf install sshd`, lalu `sudo firewall-cmd --reload`",
+        "`sudo systemctl enable --now sshd`, lalu `sudo firewall-cmd --permanent --add-service=ssh`, lalu `sudo firewall-cmd --reload`",
+        "`sudo systemctl enable --now sshd`, lalu `sudo firewall-cmd --permanent --add-service=ssh` (tanpa `--reload`, aturan belum berlaku)",
+        "`sudo firewall-cmd --permanent --remove-service=ssh`, lalu `sudo systemctl enable --now sshd`",
+        "`sudo systemctl disable sshd`, lalu `sudo firewall-cmd --reload`"
+      ],
+      "jawaban": "b",
+      "penjelasan": "Opsi `--permanent` baru berlaku setelah `--reload`."
+    },
+    {
+      "id": 38,
+      "materi": "Bagian V: SSH, Firewall, dan Layanan",
+      "pertanyaan": "Perintah untuk melihat alamat IP komputer di Linux adalah...",
+      "opsi": [
+        "`ipconfig`",
+        "`iplist`",
+        "`ssh ip`",
+        "`ping -a`",
+        "`ip a`"
+      ],
+      "jawaban": "e",
+      "penjelasan": "`ipconfig` adalah perintah Windows."
+    },
+    {
+      "id": 39,
+      "materi": "Bagian V: SSH, Firewall, dan Layanan",
+      "pertanyaan": "Perintah untuk login ke server `192.168.1.10` sebagai user `budi` lewat SSH adalah...",
+      "opsi": [
+        "`ssh 192.168.1.10@budi`",
+        "`ssh -u budi 192.168.1.10`",
+        "`ssh budi@192.168.1.10`",
+        "`login budi@192.168.1.10`",
+        "`connect budi 192.168.1.10`"
+      ],
+      "jawaban": "c",
+      "penjelasan": "Format dasarnya `ssh user@ip_target`."
+    },
+    {
+      "id": 40,
+      "materi": "Bagian V: SSH, Firewall, dan Layanan",
+      "pertanyaan": "Port bawaan (default) layanan SSH adalah...",
+      "opsi": [
+        "22",
+        "21",
+        "23",
+        "80",
+        "443"
+      ],
+      "jawaban": "a",
+      "penjelasan": "21 untuk FTP, 23 untuk Telnet, 80 untuk HTTP, dan 443 untuk HTTPS."
+    },
+    {
+      "id": 41,
+      "materi": "Bagian V: SSH, Firewall, dan Layanan",
+      "pertanyaan": "Layanan `sshd` sudah aktif, tetapi komputer lain tidak bisa terhubung. Penyebab yang paling mungkin dari pilihan berikut adalah...",
+      "opsi": [
+        "Paket `htop` belum terpasang",
+        "Kernel yang terpasang terlalu lama",
+        "User belum punya folder `/tmp`",
+        "Firewall belum mengizinkan layanan `ssh`",
+        "Interval log `atop` terlalu besar"
+      ],
+      "jawaban": "d",
+      "penjelasan": "Periksa dengan `sudo firewall-cmd --list-all`, lalu tambahkan aturan `--add-service=ssh`."
+    },
+    {
+      "id": 42,
+      "materi": "Bagian V: SSH, Firewall, dan Layanan",
+      "pertanyaan": "Perintah untuk memeriksa apakah layanan `sshd` sedang berjalan adalah...",
+      "opsi": [
+        "`sudo systemctl enable sshd`",
+        "`sudo systemctl status sshd`",
+        "`sudo systemctl daemon-reload`",
+        "`ssh -status`",
+        "`ps -s sshd`"
+      ],
+      "jawaban": "b",
+      "penjelasan": "`status` menampilkan kondisi layanan (active atau inactive) beserta log terbarunya."
+    },
+    {
+      "id": 43,
+      "materi": "Bagian V: SSH, Firewall, dan Layanan",
+      "pertanyaan": "Setelah mengubah file `/etc/ssh/sshd_config`, perintah agar perubahan berlaku adalah...",
+      "opsi": [
+        "`sudo systemctl status sshd`",
+        "`sudo systemctl enable sshd`",
+        "`sudo firewall-cmd --list-all`",
+        "`sudo passwd sshd`",
+        "`sudo systemctl restart sshd`"
+      ],
+      "jawaban": "e",
+      "penjelasan": "Layanan perlu dimulai ulang agar membaca konfigurasi yang baru."
+    },
+    {
+      "id": 44,
+      "materi": "Bagian VI: Permission, Disk, dan Paket (DNF)",
+      "pertanyaan": "Apa arti permission `755` pada perintah `chmod 755 skrip.sh`?",
+      "opsi": [
+        "Owner: r-x, Group: rwx, Others: rwx",
+        "Semua pihak: rwx",
+        "Owner: rwx, Group: r-x, Others: r-x",
+        "Owner: rw-, Group: r--, Others: r--",
+        "Owner: rwx, Group: ---, Others: ---"
+      ],
+      "jawaban": "c",
+      "penjelasan": "7 = 4+2+1 (rwx), 5 = 4+1 (r-x). Angka pertama untuk owner, kedua untuk group, ketiga untuk others."
+    },
+    {
+      "id": 45,
+      "materi": "Bagian VI: Permission, Disk, dan Paket (DNF)",
+      "pertanyaan": "Nilai oktal untuk hak akses r, w, dan x berturut-turut adalah...",
+      "opsi": [
+        "r = 4, w = 2, x = 1",
+        "r = 1, w = 2, x = 4",
+        "r = 2, w = 4, x = 1",
+        "r = 4, w = 1, x = 2",
+        "r = 0, w = 1, x = 2"
+      ],
+      "jawaban": "a",
+      "penjelasan": "Jumlahkan nilainya: rw- = 6, r-x = 5, rwx = 7."
+    },
+    {
+      "id": 46,
+      "materi": "Bagian VI: Permission, Disk, dan Paket (DNF)",
+      "pertanyaan": "Perintah agar file hanya bisa dibaca dan ditulis oleh pemilik, sedangkan group dan lainnya hanya bisa membaca, adalah...",
+      "opsi": [
+        "`chmod 755 file.txt`",
+        "`chmod 777 file.txt`",
+        "`chmod 600 file.txt`",
+        "`chmod 644 file.txt`",
+        "`chmod 444 file.txt`"
+      ],
+      "jawaban": "d",
+      "penjelasan": "644 = rw- r-- r--. Angka 600 membuat file hanya bisa diakses pemilik."
+    },
+    {
+      "id": 47,
+      "materi": "Bagian VI: Permission, Disk, dan Paket (DNF)",
+      "pertanyaan": "Perintah untuk mengubah pemilik `file.txt` menjadi `budi` dan grupnya menjadi `staf` adalah...",
+      "opsi": [
+        "`sudo chmod budi:staf file.txt`",
+        "`sudo chown budi:staf file.txt`",
+        "`sudo chown file.txt budi:staf`",
+        "`sudo chgrp budi file.txt`",
+        "`sudo usermod budi:staf file.txt`"
+      ],
+      "jawaban": "b",
+      "penjelasan": "Format `chown user:grup file`. `chmod` mengubah permission, bukan pemilik."
+    },
+    {
+      "id": 48,
+      "materi": "Bagian VI: Permission, Disk, dan Paket (DNF)",
+      "pertanyaan": "String `-rwxr-xr--` pada keluaran `ls -l` menunjukkan...",
+      "opsi": [
+        "Direktori dengan Owner: rwx, Group: r-x, Others: r--",
+        "File biasa dengan Owner: r-x, Group: rwx, Others: r--",
+        "Symbolic link dengan Owner: rwx, Group: r-x, Others: r--",
+        "File biasa dengan Owner: rwx, Group: r--, Others: r-x",
+        "File biasa dengan Owner: rwx, Group: r-x, Others: r--"
+      ],
+      "jawaban": "e",
+      "penjelasan": "Karakter pertama menunjukkan jenis: `-` file biasa, `d` direktori, `l` symbolic link."
+    },
+    {
+      "id": 49,
+      "materi": "Bagian VI: Permission, Disk, dan Paket (DNF)",
+      "pertanyaan": "Perintah untuk mengecek sisa kapasitas harddisk dalam format yang mudah dibaca manusia adalah...",
+      "opsi": [
+        "`du -sh`",
+        "`lsblk`",
+        "`df -h`",
+        "`free -h`",
+        "`ls -l`"
+      ],
+      "jawaban": "c",
+      "penjelasan": "`df` melihat penggunaan disk per filesystem. `free -h` untuk RAM."
+    },
+    {
+      "id": 50,
+      "materi": "Bagian VI: Permission, Disk, dan Paket (DNF)",
+      "pertanyaan": "Perintah untuk melihat total ukuran folder `/var/log` dalam format yang mudah dibaca adalah...",
+      "opsi": [
+        "`du -sh /var/log`",
+        "`df -h /var/log`",
+        "`ls -l /var/log`",
+        "`free -h`",
+        "`pwd -h`"
+      ],
+      "jawaban": "a",
+      "penjelasan": "`du -sh` menjumlahkan ukuran isi folder. `df -h /var/log` hanya menampilkan ukuran filesystem tempat folder itu berada."
+    },
+    {
+      "id": 51,
+      "materi": "Bagian VI: Permission, Disk, dan Paket (DNF)",
+      "pertanyaan": "Perintah untuk melihat penggunaan RAM dalam format yang mudah dibaca adalah...",
+      "opsi": [
+        "`df -h`",
+        "`du -sh`",
+        "`lsblk`",
+        "`free -h`",
+        "`uptime`"
+      ],
+      "jawaban": "d",
+      "penjelasan": "`free -h` menampilkan total, terpakai, dan sisa memori beserta swap."
+    },
+    {
+      "id": 52,
+      "materi": "Bagian VI: Permission, Disk, dan Paket (DNF)",
+      "pertanyaan": "Perintah untuk memasang paket `htop` tanpa konfirmasi tambahan di Rocky Linux adalah...",
+      "opsi": [
+        "`sudo dnf search htop -y`",
+        "`sudo dnf install htop -y`",
+        "`sudo dnf remove htop -y`",
+        "`sudo apt install htop -y`",
+        "`sudo rpm -q htop`"
+      ],
+      "jawaban": "b",
+      "penjelasan": "`apt` dipakai di Debian dan Ubuntu. Di Rocky Linux, package manager-nya `dnf`."
+    },
+    {
+      "id": 53,
+      "materi": "Bagian VI: Permission, Disk, dan Paket (DNF)",
+      "pertanyaan": "Perintah untuk menghapus paket `htop` dari sistem Rocky Linux adalah...",
+      "opsi": [
+        "`sudo dnf purge htop`",
+        "`sudo dnf drop htop`",
+        "`sudo rm htop`",
+        "`sudo userdel htop`",
+        "`sudo dnf remove htop`"
+      ],
+      "jawaban": "e",
+      "penjelasan": "`sudo dnf search nama` dipakai untuk mencari paket sebelum memasang atau menghapusnya."
+    }
+  ]
+}
