@@ -327,3 +327,39 @@ legend { padding: 0; margin-bottom: 0.6rem; font-weight: 600; }
   .nilai path { animation: none; }
   .progres > div { transition: none; }
 }
+
+/* ---------- soal ketik ---------- */
+.ketik-baris {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  margin-top: 1.6rem;
+  padding: 0.35rem 1rem;
+  background: #fff;
+  border-left: 4px solid var(--tinta);
+  border-bottom: 1px solid var(--garis);
+}
+.ketik-baris:focus-within { outline: 3px solid var(--fokus); outline-offset: 2px; }
+.ketik-baris .prompt {
+  font-family: var(--mono);
+  font-weight: 600;
+  color: var(--tinta-redup);
+  user-select: none;
+}
+.isian {
+  flex: 1;
+  min-width: 0;
+  padding: 0.6rem 0;
+  border: 0;
+  background: transparent;
+  color: var(--tinta);
+  font-family: var(--mono);
+  font-size: 1.05rem;
+}
+.isian:focus { outline: none; }
+.isian::placeholder { color: var(--tinta-redup); opacity: 0.75; font-family: var(--font); }
+.ketik-baris.benar { background: var(--benar-latar); border-left-color: var(--benar); }
+.ketik-baris.salah { background: var(--salah-latar); border-left-color: var(--salah); }
+.umpan code { overflow-wrap: anywhere; }
+.tinjau .jawab code { overflow-wrap: anywhere; }
+.kaki-soal { flex-wrap: wrap; }
